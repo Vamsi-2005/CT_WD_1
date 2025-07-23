@@ -1,0 +1,436 @@
+/* Enable smooth scrolling when clicking anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  scroll-padding-top: 70px;
+}
+
+
+/* Reset default margins and paddings */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --------------------------- */
+/*          HEADER STYLES     */
+/* --------------------------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+}
+
+.club-name {
+    margin-top: 14px; 
+}
+
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 8px 10px;
+    color: black;  
+}
+
+.nav-links li a:hover {
+    background-color: beige;
+    border-radius: 5px;
+    color: skyblue;
+
+}
+
+.search-bar {
+    margin-top: 15px;
+    margin-right: 20px;
+    border-color: white;
+}
+
+.search-bar input {
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 15px;
+}
+
+/* Hidden menu */
+.menu-toggle {
+    display: none;
+}
+
+/* Hamburger menu icon (mobile only) */
+.menu-icon {
+    display: none;
+    font-size: 26px;
+    color: black;
+    cursor: pointer;
+    user-select: none;
+}
+
+.menu-icon::before {
+    content: "☰";
+}
+
+.menu-toggle:checked + .menu-icon::before {
+    content: "✕";
+}
+
+
+/* NAV PAGE RESPONSIVENESS */
+@media (max-width: 768px) {
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 26px;
+    }
+    
+    /* Convert nav links to vertical dropdown */
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 45%;
+        width: 50%;
+        background: #fff;
+        display: none;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    .menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .nav-links a {
+        text-align: center;
+        display: block;
+        padding: 10px 20px;
+        color: #fff;
+    }
+    
+    .head {
+        flex-wrap: wrap;
+    }
+
+     .header .search-bar {
+        margin-right: 45px;
+    }
+
+    .home .home-content h2 {
+        font-size: 30px;
+    }
+
+    .home .home-content p {
+        font-size: 20px;
+    }
+}
+
+
+
+/* --------------------------- */
+/*          HOME PAGE STYLES   */
+/* --------------------------- */
+
+.home{
+    background-image: url(logo-home.png);
+    width: 100%;
+    height: 100vh;
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+
+    align-items: center;
+    justify-items: left;
+    margin-bottom: 100px;
+}
+
+.home-content {
+    padding: 200px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    margin: auto;
+    margin-left: 15%;
+}
+
+.home h2 {
+    font-size: 3.5rem;
+}
+
+.home p {
+    font-size: 1.5rem;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+
+.join-btn {
+    color: #fff;
+    background-color: dodgerblue;
+}
+
+
+.read-more-btn {
+    color: black;
+    background: white;
+}
+
+
+/* --------------------------- */
+/*       SPORTS PAGE STYLES    */
+/* --------------------------- */
+
+
+.sports{
+    background-color: white;
+}
+
+.sports-head span {
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 40px 0 ;
+    margin-bottom: 30px;
+}
+
+.sports-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: auto;
+    padding: 25px;
+    margin-bottom: 50px;
+}
+
+.sports-card {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin: auto;
+    transition: transform 0.3s ease;
+}
+
+
+.sports-card:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(#2d8cf0);
+}
+
+
+.sports-card h2 {
+    font-weight: bold;
+    margin: 10px 0;
+    font-size: 25px;
+}
+
+
+.sports-card p {
+    color: black;
+    font-size: 15px;
+    margin: 0 0 15px;
+    line-height: 1.3;
+    text-indent: 20px;
+    text-align: justify;
+}
+
+
+.sports-card .sports-btn {
+    margin-top: auto;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #007bff;
+    background-color: white;
+    border-radius: 20px;
+    
+}
+
+
+
+/* --------------------------- */
+/*      GALLERY PAGE STYLES    */
+/* --------------------------- */
+
+.gallery-head {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px 40px;
+    text-transform: uppercase;
+}
+
+
+.gallery-album {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: auto;
+    padding: 25px;
+    margin-bottom: 50px;
+}
+
+.gallery-album img {
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    margin: auto;
+    border-radius: 15px;
+}
+
+.gallery-album img:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(#fff);
+}
+
+
+
+/* --------------------------- */
+/*     CONTACT PAGE STYLES     */
+/* --------------------------- */
+
+
+.contact-page {
+    background-color: #fff;
+}
+
+.contact-container {
+            
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.contact-left-title {
+    font-weight: 600;
+    color: #a363aa;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.contact-left-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: #a363aa;
+    border-radius: 10px;
+    margin-bottom: 20px
+}
+
+.contact-inputs {
+    width: 400px;
+    height: 50px;
+    border: 1px solid gray;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #666;
+    border-radius: 50px;
+}
+
+.contact-left textarea {
+    height: 150px;
+    padding-top: 15px;
+    border-radius: 20px;   
+}
+
+.contact-inputs:focus {
+    border: 2px solid #ff994f;
+}
+
+.contact-inputs::placeholder {
+    color :#a9a9a9;
+}
+
+.contact-left button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #fff;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #ff994f, #fa6d86);
+    cursor: pointer;
+}
+
+.contact-left button img {
+    height: 15px;
+}
+
+
+/*  CONTACT PAGE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+
+    .contact-inputs {
+        width: 80vw
+    }
+
+    .contact-right {
+        display: none;
+    }
+}
+
+/* FOOTER STYLES */
+
+footer {
+    height: 70px;
+    font-size: 16px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 24px;
+}
